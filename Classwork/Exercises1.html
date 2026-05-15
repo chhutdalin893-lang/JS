@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Input 
+    let khmer = parseInt (prompt('Value khmer :'))
+    let English = parseInt (prompt('Value English :'))
+    let history = parseInt (prompt('Value history :'))
+    let math = parseInt (prompt('Value math :'))
+    let kimi = parseInt (prompt('Value kimi :'))
+
+    // Output 
+    document.writeln('Value khmer : ' + khmer + "<br>")
+    document.writeln('Value English : ' + English + "<br>")
+    document.writeln('Value history : ' + history + "<br>")
+    document.writeln('Value math : ' + math + "<br>")
+    document.writeln('Value kimi : ' + kimi + "<br>")
+
+    // Total & averageSubject 
+    let totalSubject = khmer+English+history+math+kimi
+    document.writeln('totalSubject : ' + totalSubject + "<br>")
+    let averageSubject = totalSubject/5
+    document.writeln('averageSubject : ' + averageSubject + "<br>")
+    let Grade;
+
+    if(averageSubject > 90){
+        document.writeln('Grade A')
+    }else if(averageSubject > 80){
+        document.writeln('Grade B')
+    }else if(averageSubject > 70){
+        document.writeln('Grade C')
+    }else if(averageSubject > 60){
+        document.writeln('Grade D')
+    }else if(averageSubject > 50){
+        document.writeln('Grade E')
+    }else{
+        document.writeln('Grade F')
+    }
+</script>
+</html>

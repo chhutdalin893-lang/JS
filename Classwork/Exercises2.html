@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let code = prompt('Enter code : ')
+    let name = prompt('Enter name : ')
+    let qty = parseInt(prompt('Enter qty : '))
+    let price = parseFloat(prompt('Enter price : '))
+
+    document.write('Code : ' + code + "<br>")
+    document.write('Name : ' + name + "<br>")
+    document.write('Qty : ' + qty + "<br>")
+    document.write('Price : ' + price +" $ "+ "<br>")
+
+    document.write("<hr>");
+
+    let total = qty*price
+    document.writeln('Total = ' + total + "<br>")
+    let discountRate;
+
+    if (total > 60){
+        document.writeln('Discount 70% = ' + (discountRate = 0.7) + "<br>")
+    }else if (total > 50){
+        document.writeln('Discount 60% = ' + (discountRate = 0.6) + "<br>")
+    }else if (total > 40){
+        document.writeln('Discount 50% = ' + (discountRate = 0.5) + "<br>")
+    }else if (total > 30){
+        document.writeln('Discount 40% = ' + (discountRate = 0.4) + "<br>")
+    }else if (total > 20){
+        document.writeln('Discount 30% = ' + (discountRate = 0.3) + "<br>")
+    }else if (total > 10){
+        document.writeln('Discount 20% = ' + (discountRate = 0.2) + "<br>")
+    }else{
+        document.writeln('Discount 10% = ' + (discountRate = 0.1) + "<br>")
+    }
+
+    let payment = total - (total*discountRate)
+    document.writeln('Payment = ' + payment + "<br>")
+</script>
+</html>

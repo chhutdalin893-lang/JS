@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    //condition statement
+    // if condition
+    let x = 10;
+    if (5 < x) {
+      console.log("Result x = 10");
+    } else if (x != 10) {
+      console.log("x != 10 is true");
+    } else if (x < 5 && x != 5) {
+      console.log("x < 5 && x !=  5");
+    }
+
+    // Ternary operater
+    let age = 18;
+    let person =
+      age > 18
+        ? "You can have relationship❤️"
+        : "You can not have relationship❤️‍🩹";
+    document.write("Result person right now = " + person);
+
+    // use with condition topic register
+    let username = "Dalin",
+      gender = "F",
+      email = "lin@gmail.com",
+      password = "2222222";
+    if (username === "Dalin") {
+      if (gender === "F") {
+        if (email === "lin@gmail.com") {
+          if (password === "2222222") {
+            console.log("Welcome to our homepage");
+          } else {
+            console.log("password wrong!");
+          }
+        } else {
+          console.log("email invalide");
+        }
+      } else {
+        console.log("gender invalide");
+      }
+    } else {
+      console.log("username invalide");
+    }
+  </script>
+</html>

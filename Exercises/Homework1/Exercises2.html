@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let score1 = parseInt(prompt("Enter Score 1 : "))
+    let score2 = parseInt(prompt("Enter Score 2 : "))
+    let score3 = parseInt(prompt("Enter Score 3 : "))
+    let score4 = parseInt(prompt("Enter Score 4 : "))
+    let score5 = parseInt(prompt("Enter Score 5 : "))
+
+    let total = score1 + score2 + score3 + score4 + score5;
+    let average = total/5;
+
+    document.write("<h1>Score Results</h1>");
+        document.write("Score 1: " + score1 + "<br>");
+        document.write("Score 2: " + score2 + "<br>");
+        document.write("Score 3: " + score3 + "<br>");
+        document.write("Score 4: " + score4 + "<br>");
+        document.write("Score 5: " + score5 + "<br>");
+        document.write("<hr>");
+        document.write("<h2>Total Score: </h2>" + total + "<br>");
+        document.write("<h2>Average: </h2>" + average.toFixed(2));
+</script>
+</html>

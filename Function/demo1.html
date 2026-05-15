@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+    <script>
+        // Do it with parametor non return and user input 
+
+        function infoCustomer(Cus_name , Cus_gender , Cus_contact , Cus_email , Cus_pss){
+            document.write("Cus_name : " + Cus_name + "<br>" +
+                " Cus_gender : " + Cus_gender + "<br>" +
+                " Cus_contact : " + Cus_contact + "<br>" +
+                " Cus_email : " + Cus_email + "<br>" +
+                " Cus_pss : " + Cus_pss + "<br>"
+            )
+        }
+
+        let name    = prompt("Enter Customer Name:")
+        let gender  = prompt("Enter Gender:")
+        let contact = prompt("Enter Contact Number:")
+        let email   = prompt("Enter Email:")
+        let pass    = prompt("Enter Password:")
+
+        infoCustomer(name, gender, contact, email, pass)
+    </script>
+</html>
