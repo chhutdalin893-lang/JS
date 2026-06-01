@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Haven Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+
+body {
+    background-color: #f0f7f4; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column; /* Changed to column to allow display result under the card if needed */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border-top: 8px solid #ff9f43;
+}
+
+.paw-icon {
+    font-size: 3rem;
+    color: #ff9f43;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #2d3436;
+    margin: 0;
+}
+
+p {
+    color: #636e72;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2d3436;
+    font-weight: 600;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #dfe6e9;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #ff9f43;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff9f43;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #ee5253; 
+    transform: translateY(-2px);
+}
+
+/* Style for displaying the submitted data */
+.result-display {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #e3faf1;
+    border: 2px dashed #2ed573;
+    border-radius: 10px;
+    text-align: left;
+    display: none; /* Hidden by default until submitted */
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.result-display h3 {
+    margin-top: 0;
+    color: #2ed573;
+}
+
+.result-item {
+    margin-bottom: 8px;
+    color: #2d3436;
+}
+</style>
+
+<body>
+    <div class="login-container">
+        <div class="form-header">
+            <div class="paw-icon"><i class="fa-solid fa-paw"></i></div>
+            <h2>Welcome Back!</h2>
+            <p>Ready to see your furry friends?</p>
+        </div>
+
+        <form id="registrationForm">
+            <div class="input-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname"  required>
+            </div>
+
+            <div class="input-group">
+                <label for="gender">Gender</label>
+                <select id="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Example@gmail.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="login-btn">Submit Info</button>
+        </form>
+    </div>
+
+    <div id="resultBox" class="result-display">
+        <h3>Submitted Information:</h3>
+        <div class="result-item"><strong>Full Name:</strong> <span id="resFullname"></span></div>
+        <div class="result-item"><strong>Gender:</strong> <span id="resGender"></span></div>
+        <div class="result-item"><strong>Email:</strong> <span id="resEmail"></span></div>
+        <div class="result-item"><strong>Password:</strong> <span id="resPassword"></span></div>
+    </div>
+</body>
+
+<script>
+
+    let form = document.getElementById('registrationForm');
+    
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const fullnameValue = document.getElementById('fullname').value;
+        const genderValue = document.getElementById('gender').value;
+        const emailValue = document.getElementById('email').value;
+        const passwordValue = document.getElementById('password').value;
+        
+        document.getElementById('resFullname').textContent = fullnameValue;
+        document.getElementById('resGender').textContent = genderValue;
+        document.getElementById('resEmail').textContent = emailValue;
+        document.getElementById('resPassword').textContent = passwordValue;
+        
+        document.getElementById('resultBox').style.display = 'block';
+        
+        form.reset();
+    });
+</script>
+</html>

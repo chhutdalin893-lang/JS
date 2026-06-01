@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap Programming Cards</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* Wrapper to keep image boxes identical without stretching the logos */
+      .card-img-wrapper {
+        height: 160px;
+        background-color: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      
+      .card-img-wrapper img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* Prevents logos from being cut off or squished */
+      }
+
+      /* Subtle lift effect on hover */
+      .card-hover {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <div class="container py-5">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center" id="card-grid">
+
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const imageArray = [
+        {
+          image: "https://i.pinimg.com/736x/a8/53/14/a8531424a5fac660e4261f72ca817141.jpg",
+          title: "Python",
+          details: "The official logo for the Python programming language. It features two intertwined snakes, one blue and one yellow, forming a circular shape. Python is a high-level, interpreted, general-purpose programming language known for its readability and versatility.",
+        },
+        {
+          image: "https://cdn.vectorstock.com/i/500p/93/89/c-programming-logo-vector-30039389.jpg",
+          title: "C Programming",
+          details: "The logo representing the C programming language. It's a simple, stylized letter 'C' often depicted in blue. C is a powerful and foundational programming language used extensively in system programming, embedded systems, and game development.",
+        },
+        {
+          image: "https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png",
+          title: "JavaScript",
+          details: "A widely recognized logo for JavaScript. It's a yellow badge with the stylized letters 'JS' in black. JavaScript is an essential scripting language for web development, enabling interactive and dynamic content on websites.",
+        },
+        {
+          image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=400",
+          title: "Java",
+          details: "The official logo for the Java programming language, featuring a stylized coffee cup with rising steam, often in shades of blue and orange. Java is a class-based, object-oriented programming language built for portability.",
+        },
+        {
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE8e_RcGD1vyCtKayaEi39pwMMYbTLIny3uQ&s",
+          title: "Go (Golang)",
+          details: "The logo for the Go programming language. It's a simple and modern design featuring the word 'Go' in a clean, sans-serif blue font with streaks suggesting speed. Go is built for scalable and performant modern backend systems.",
+        },
+        {
+          image: "https://www.logotypes101.com/logos/203/272663FA02DE2DAA2BBAE2FC39F14783/php.png",
+          title: "PHP",
+          details: "The logo for PHP: Hypertext Preprocessor. It's a stylized wordmark 'php' enclosed in a rounded rectangle. PHP is a widely-used open-source scripting language especially suited for web development and templating.",
+        },
+        {
+          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGEF3IDBSE42_pPkvBkXnMb5sfv9va71SASg&s",
+          title: "C# (.NET)",
+          details: "The logo for the .NET platform, heavily associated with the C# programming language. C# is a modern, object-oriented, type-safe programming language enabling developers to build secure apps across desktop, mobile, and web setups.",
+        },
+        {
+          image: "https://ih1.redbubble.net/image.738129631.6518/flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+          title: "Linux (Tux)",
+          details: "While not strictly a programming language, Tux is the official mascot of the Linux kernel. This friendly penguin is widely recognized in the open-source community and often associated with core backend system development environments.",
+        },
+        {
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/1280px-Microsoft_.NET_logo.svg.png",
+          title: ".NET Platform",
+          details: "An open-source developer platform, created by Microsoft, used for building many different types of cross-platform cloud, mobile, and web applications natively with languages like C#, F#, or Visual Basic.",
+        },
+      ];
+
+      const cardContainer = document.getElementById("card-grid");
+      cardContainer.innerHTML = "";
+      
+      imageArray.map((value) => {
+        
+        cardContainer.innerHTML += `
+          <div class="col d-flex align-items-stretch">
+            <div class="card w-100 border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-column card-hover">
+              
+              <div class="card-img-wrapper">
+                <img src="${value.image}" alt="${value.title}">
+              </div>
+              
+              <div class="card-body p-4 d-flex flex-column text-center">
+                <h5 class="card-title fw-bold text-dark mb-2">${value.title}</h5>
+                <p class="card-text text-secondary small flex-grow-1">${value.details}</p>
+                
+              </div>
+
+            </div>
+          </div>`
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" id="btn">Click me</button>
+    <div id="demo"></div>
+
+    <script>
+
+      let demoDiv = document.getElementById('demo');
+      let button = document.getElementById("btn");
+
+
+      button.addEventListener("click", showLove);
+
+      function showLove() {
+        // alert("I like you ❤️");
+
+        demoDiv.innerHTML = '<img src="./img/Screenshot 2026-05-15 005857.png" alt="Love Image">';
+      }
+    </script>
+  </body>
+</html>
